@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="main__inner">
+                <div class="main__left">
+                    <div class="main__left-header">
+                        <div class="main__row">
+                            <span class="main__title">Способ расчета</span>
+                            <div class="main__sum active" id="tab">по сумме кредита</div>
+                            <div class="main__cost" id="tab">по цене покупки</div>
+                        </div>
+                    </div>
+                    <div class="main__credit">
+                        <div class="main__addition">
+                            <div class="main__row">
+                                <span class="main__title">Стоимость покупки</span>
+                                <div class="main__wrapper">
+                                    <input type="text" class="main__cost-thing">
+                                    <span class="main__units">руб.</span>
+                                </div>
+                            </div>
+                            <div class="main__row">
+                                <span class="main__title">Первоначальный взнос</span>
+                                <div class="main__wrapper">
+                                    <input type="text" class="main__contribution">
+                                    <select>
+                                        <option>%</option>
+                                        <option>руб.</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main__row">
+                            <span class="main__title">Сумма кредита</span>
+                            <div class="main__wrapper">
+                                <input type="text" class="main__sum-credit">
+                                <span class="main__units">руб.</span>
+                            </div>
+                        </div>
+                        <div class="main__row">
+                            <span class="main__title">Срок кредита</span>
+                            <div class="main__wrapper">
+                                <input type="text" class="main__term-credit">
+                                <span class="main__units">мес.</span>
+                            </div>
+                        </div>
+                        <div class="main__row">
+                            <span class="main__title">Процентная ставка</span>
+                            <div class="main__wrapper">
+                                <input type="text" class="main__percent">
+                                <span class="main__units">%</span>
+                            </div>
+                        </div>
+                        <div class="main__row">
+                            <span class="main__title">Тип выплат</span>
+                            <div class="main__wrapper-radio">
+                                <label>аннуитетный
+                                    <input type="radio" class="main__radio" name='credit' checked>
+                                </label>
+                                <label>дифференцированный
+                                    <input type="radio" class="main__radio" name='credit'>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="main__row">
+                            <span class="main__title">Единовременная комиссия</span>
+                            <div class="main__wrapper">
+                                <input type="text" class="main__percent">
+                                <select>
+                                    <option>%</option>
+                                    <option>руб.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="main__row">
+                            <span class="main__title">Доп. ежемесячные платежи (пакет услуг)</span>
+                            <div class="main__wrapper">
+                                <input type="text" class="main__percent">
+                                <span class="main__units">%</span>
+                            </div>
+                        </div>
+                        <div class="main__row">
+                            <span class="main__title">Начало выплат</span>
+                            <div class="main__select">
+                                <select class="main__mounth">
+                                    <option>январь</option>
+                                    <option>февраль</option>
+                                    <option>март</option>
+                                    <option>апрель</option>
+                                    <option>май</option>
+                                    <option>июнь</option>
+                                    <option>июль</option>
+                                    <option>август</option>
+                                    <option>сентябрь</option>
+                                    <option>октябрь</option>
+                                    <option>ноябрь</option>
+                                    <option>декабрь</option>
+                                </select>
+                                <select class="main__year">
+                                    <option>2020</option>
+                                    <option>2021</option>
+                                    <option>2022</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                    <option>2025</option>
+                                    <option>2026</option>
+                                    <option>2027</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="button" class="main__button" value="РАССЧИТАТЬ">
+                    </div>
+                </div>
+                <div class="main__right result">
+                    <div class="result__row">
+                        <span class="result__title">Ежемесячный платеж:</span>
+                        <span class="result__value" id="payment"></span>
+                    </div>
+                    <div class="result__row">
+                        <span class="result__title">Общая сумма выплат:</span>
+                        <span class="result__value" id="amount-payment"></span>
+                    </div>
+                    <div class="result__row">
+                        <span class="result__title">Переплата по кредиту:</span>
+                        <span class="result__value" id="overpayment"></span>
+                    </div>
+                    <div class="result__row">
+                        <span class="result__title">Процент переплаты:</span>
+                        <span class="result__value" id="perc-overpayment"></span>
+                    </div>
+                    <div class="result__row">
+                        <span class="result__title">Окончание выплат:</span>
+                        <span class="result__value" id="finish-payment"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
