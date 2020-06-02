@@ -4,7 +4,8 @@ import Swiper from 'swiper';
 import AOS from 'aos';
 
 import activeManager from './js/tabs';
-import calculatorCredit from './js/calculator'
+import calculatorCredit from './js/calculator';
+import fillSection from './js/fillSection';
 // import './js/header.js';
 // import './js/mobile-menu.js';
 // import './js/scroll.js';
@@ -13,8 +14,14 @@ import calculatorCredit from './js/calculator'
 
 document.addEventListener('DOMContentLoaded', function() {
     activeManager('#tab', '.main__addition');
+    fillSection();
+
     document.querySelector('.main__button').addEventListener('click', () => {
+      document.querySelector('.table').replaceChild(document.createElement('tbody'), document.querySelector('.table').tBodies[0])
+
       calculatorCredit();
+
+
     })
     var mySwiper = new Swiper('.swiper-container', { 
         spaceBetween: 30,

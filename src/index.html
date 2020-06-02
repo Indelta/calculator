@@ -64,56 +64,37 @@
                             <span class="main__title">Тип выплат</span>
                             <div class="main__wrapper-radio">
                                 <label>аннуитетный
-                                    <input type="radio" class="main__radio" name='credit' checked>
+                                    <input type="radio" class="main__annyit" name='credit'>
                                 </label>
                                 <label>дифференцированный
-                                    <input type="radio" class="main__radio" name='credit'>
+                                    <input type="radio" class="main__differ" name='credit'>
                                 </label>
                             </div>
                         </div>
                         <div class="main__row">
                             <span class="main__title">Единовременная комиссия</span>
                             <div class="main__wrapper">
-                                <input type="text" class="main__percent">
-                                <select>
+                                <input type="text" class="main__commision">
+                                <span class="main__units">руб.</span>
+                                <!-- <select>
                                     <option>%</option>
                                     <option>руб.</option>
-                                </select>
+                                </select> -->
                             </div>
                         </div>
                         <div class="main__row">
                             <span class="main__title">Доп. ежемесячные платежи (пакет услуг)</span>
                             <div class="main__wrapper">
-                                <input type="text" class="main__percent">
-                                <span class="main__units">%</span>
+                                <input type="text" class="main__dop-payment">
+                                <span class="main__units">руб.</span>
                             </div>
                         </div>
                         <div class="main__row">
                             <span class="main__title">Начало выплат</span>
                             <div class="main__select">
-                                <select class="main__mounth">
-                                    <option>январь</option>
-                                    <option>февраль</option>
-                                    <option>март</option>
-                                    <option>апрель</option>
-                                    <option>май</option>
-                                    <option>июнь</option>
-                                    <option>июль</option>
-                                    <option>август</option>
-                                    <option>сентябрь</option>
-                                    <option>октябрь</option>
-                                    <option>ноябрь</option>
-                                    <option>декабрь</option>
+                                <select class="main__month">
                                 </select>
                                 <select class="main__year">
-                                    <option>2020</option>
-                                    <option>2021</option>
-                                    <option>2022</option>
-                                    <option>2023</option>
-                                    <option>2024</option>
-                                    <option>2025</option>
-                                    <option>2026</option>
-                                    <option>2027</option>
                                 </select>
                             </div>
                         </div>
@@ -142,6 +123,30 @@
                         <span class="result__value" id="finish-payment"></span>
                     </div>
                 </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>№ <br> платежа</th>
+                            <th>Дата <br> платежа</th>
+                            <th>Сумма <br> платежа</th>
+                            <th>в т.ч. <br> осн. долг</th>
+                            <th>в т.ч. <br> проценты</th>
+                            <th>в т.ч. <br> доп. платежи</th>
+                            <th>Остаток <br> осн. долга</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td class="total_payment"></td>
+                            <td class="total_credit_pay"></td>
+                            <td class="total_percent_pay"></td>
+                            <td class="total_services_pay"></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </div>
     </main>
