@@ -6,6 +6,7 @@ import AOS from 'aos';
 import activeManager from './js/tabs';
 import calculatorCredit from './js/calculator';
 import fillSection from './js/fillSection';
+import paintDiagram from './js/diagram';
 // import './js/header.js';
 // import './js/mobile-menu.js';
 // import './js/scroll.js';
@@ -18,11 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('.main__button').addEventListener('click', () => {
       document.querySelector('.table').replaceChild(document.createElement('tbody'), document.querySelector('.table').tBodies[0])
-
-      calculatorCredit();
-
-
+      const arr = calculatorCredit();
+      paintDiagram(arr);
     })
+
     var mySwiper = new Swiper('.swiper-container', { 
         spaceBetween: 30,
         centeredSlides: true,

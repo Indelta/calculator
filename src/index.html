@@ -24,15 +24,15 @@
                             <div class="main__row">
                                 <span class="main__title">Стоимость покупки</span>
                                 <div class="main__wrapper">
-                                    <input type="text" class="main__cost-thing">
+                                    <input type="text" class="main__cost-thing" value='2000'>
                                     <span class="main__units">руб.</span>
                                 </div>
                             </div>
                             <div class="main__row">
                                 <span class="main__title">Первоначальный взнос</span>
                                 <div class="main__wrapper">
-                                    <input type="text" class="main__contribution">
-                                    <select>
+                                    <input type="text" class="main__contribution" value='50'>
+                                    <select name='contribution-union'>
                                         <option>%</option>
                                         <option>руб.</option>
                                     </select>
@@ -42,21 +42,21 @@
                         <div class="main__row">
                             <span class="main__title">Сумма кредита</span>
                             <div class="main__wrapper">
-                                <input type="text" class="main__sum-credit">
+                                <input type="text" class="main__sum-credit" value="1000">
                                 <span class="main__units">руб.</span>
                             </div>
                         </div>
                         <div class="main__row">
                             <span class="main__title">Срок кредита</span>
                             <div class="main__wrapper">
-                                <input type="text" class="main__term-credit">
+                                <input type="text" class="main__term-credit" value='12'>
                                 <span class="main__units">мес.</span>
                             </div>
                         </div>
                         <div class="main__row">
                             <span class="main__title">Процентная ставка</span>
                             <div class="main__wrapper">
-                                <input type="text" class="main__percent">
+                                <input type="text" class="main__percent" value='10'>
                                 <span class="main__units">%</span>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                             <span class="main__title">Тип выплат</span>
                             <div class="main__wrapper-radio">
                                 <label>аннуитетный
-                                    <input type="radio" class="main__annyit" name='credit'>
+                                    <input type="radio" class="main__annyit" name='credit' checked>
                                 </label>
                                 <label>дифференцированный
                                     <input type="radio" class="main__differ" name='credit'>
@@ -123,6 +123,7 @@
                         <span class="result__value" id="finish-payment"></span>
                     </div>
                 </div>
+                <div id="piechart_3d"></div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -149,7 +150,9 @@
                 </table>
             </div>
         </div>
+        <div id="chart_div"></div>
     </main>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 
 </html>
