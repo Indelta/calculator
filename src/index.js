@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('.main__button').addEventListener('click', () => {
       document.querySelector('.table').replaceChild(document.createElement('tbody'), document.querySelector('.table').tBodies[0])
-      const arr = calculatorCredit();
-      paintDiagram(arr);
+      calculatorCredit();
+      paintDiagram();
     })
 
     var mySwiper = new Swiper('.swiper-container', { 
