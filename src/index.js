@@ -7,6 +7,7 @@ import activeManager from './js/tabs';
 import calculatorCredit from './js/calculator';
 import fillSection from './js/fillSection';
 import paintDiagram from './js/diagram';
+import changeValueInput from './js/input-range';
 // import './js/header.js';
 // import './js/mobile-menu.js';
 // import './js/scroll.js';
@@ -16,6 +17,7 @@ import paintDiagram from './js/diagram';
 document.addEventListener('DOMContentLoaded', function() {
     activeManager('#tab', '.main__addition');
     fillSection();
+    changeValueInput();
 
     document.querySelector('.main__button').addEventListener('click', () => {
       document.querySelector('.table').replaceChild(document.createElement('tbody'), document.querySelector('.table').tBodies[0])

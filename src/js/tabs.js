@@ -13,10 +13,12 @@ const activeManager = (elements, hidden) => {
       if(document.querySelector('.main__cost').classList.contains('active')){
         document.querySelector(hidden).classList.add('show');
         document.querySelector('.main__sum-credit').disabled = true;
+        document.querySelector('.main__range').disabled = true;
         calcPurchasePrice();
       } else {
         document.querySelector(hidden).classList.remove('show');
         document.querySelector('.main__sum-credit').disabled = false;
+        document.querySelector('.main__range').disabled = false;
       }    
     })
   }) 

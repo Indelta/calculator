@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>calculator</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
                             <div class="main__row">
                                 <span class="main__title">Стоимость покупки</span>
                                 <div class="main__wrapper">
-                                    <input type="text" class="main__cost-thing" value='2000'>
+                                    <input type="text" class="main__cost-thing" value='2000'>                                    
                                     <span class="main__units">руб.</span>
                                 </div>
                             </div>
@@ -43,6 +43,7 @@
                             <span class="main__title">Сумма кредита</span>
                             <div class="main__wrapper">
                                 <input type="text" class="main__sum-credit" value="1000">
+                                <input type="range" min="100" max="50000" value="1000" class="main__range">
                                 <span class="main__units">руб.</span>
                             </div>
                         </div>
@@ -50,6 +51,7 @@
                             <span class="main__title">Срок кредита</span>
                             <div class="main__wrapper">
                                 <input type="text" class="main__term-credit" value='12'>
+                                <input type="range" min="1" max="100" value="12" class="main__range-percent">
                                 <span class="main__units">мес.</span>
                             </div>
                         </div>
@@ -123,7 +125,7 @@
                         <span class="result__value" id="finish-payment"></span>
                     </div>
                 </div>
-                <div id="piechart_3d"></div>
+                <div id="piechart"></div>
                 <table class="table">
                     <thead>
                         <tr>

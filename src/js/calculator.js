@@ -16,7 +16,7 @@ const calculatorCredit = () => {
   let sumMainDebit = 0;
   let sumPercent = 0;
   let sumDopPayment = 0;
-  let arrDiagramma = [['Доп. платежи', 'Основной долг', 'Проценты по кредиту']];
+  let arrDiagramma = [['Дата', 'Основной долг', 'Проценты по кредиту', 'Дополнительные платежи']];
   let arrPieCharts = [['Сумма кредита', 'Размер переплаты']];
 
 
@@ -64,6 +64,7 @@ const calculatorCredit = () => {
     for (let j = 1; j <= n; j++) {
       let arrNew = []
       let data = getPercentAnt(); 
+      console.log(data);
       let tr = document.createElement('tr');
       document.querySelector('tbody').appendChild(tr);       
       for (let i = 1; i <= 7; i++) {  
@@ -93,10 +94,13 @@ const calculatorCredit = () => {
         if (i === 6) {
           td.innerHTML = dopPayment;
           sumDopPayment += +dopPayment;
+          arrNew.push(+dopPayment);
         }
         if (i === 7) {
           td.innerHTML = data.currentSum.toFixed(1);
+          
         }
+        
       }
       arrDiagramma.push(arrNew);
     }
@@ -116,7 +120,7 @@ const calculatorCredit = () => {
     document.querySelector('.total_percent_pay').innerHTML = sumPercent.toFixed(2);
     document.querySelector('.total_services_pay').innerHTML = sumDopPayment.toFixed(2);
     arrPieCharts.push(['Сумма кредита', +sum])
-    arrPieCharts.push(['Размер переплаты', totalOverPayment])
+    arrPieCharts.push(['Размер переплаты', +totalOverPayment.toFixed(2)])
   }
 
   // Дифференцированный расчет кредита
@@ -146,6 +150,7 @@ const calculatorCredit = () => {
 
   function createTableDef() {    
     for (let j = 1; j <= n; j++) {
+      let arrNew = []
       let data = getData(); 
       if (j === n) {
         finishPayment = data.montlyPayment;
@@ -160,6 +165,7 @@ const calculatorCredit = () => {
         }
         if(i === 2) {
           td.innerHTML = getDate().month[datePayment(j).getMonth()] + ' ' + datePayment(j).getFullYear();
+          arrNew.push(getDate().month[datePayment(j).getMonth()] + ' ' + datePayment(j).getFullYear());
         }  
         if (i === 3) {
           td.innerHTML = data.montlyPayment.toFixed(2);
@@ -168,18 +174,22 @@ const calculatorCredit = () => {
         if (i === 4) {
           td.innerHTML = data.currentDebt.toFixed(2);
           sumMainDebit += +data.currentDebt.toFixed(2);
+          arrNew.push(+data.currentDebt.toFixed(2));
         }
         if (i === 5) {
           td.innerHTML = data.currentPercent.toFixed(2);
           sumPercent += +data.currentPercent.toFixed(2);
+          arrNew.push(+data.currentPercent.toFixed(2));
         }
         if (i === 6) {
           td.innerHTML = dopPayment;
+          arrNew.push(+dopPayment);
         }
         if (i === 7) {
           td.innerHTML = data.currentSum.toFixed(1);
         }
       }
+      arrDiagramma.push(arrNew);
     }
   }
 
@@ -207,8 +217,11 @@ const calculatorCredit = () => {
     fillResultDef();
 
   }
+
+  console.log(arrDiagramma)
+  // pieCharts(arrPieCharts);
   paintDiagram(arrDiagramma);
-  pieCharts(arrPieCharts);
+
 }
 
 export default calculatorCredit;

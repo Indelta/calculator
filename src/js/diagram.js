@@ -1,4 +1,4 @@
-const paintDiagram = (arrDiagramma) => {
+const paintDiagram = (arr) => {
   // Load the Visualization API and the corechart package.
   google.charts.load("current", { packages: ["corechart"] });
 
@@ -10,14 +10,14 @@ const paintDiagram = (arrDiagramma) => {
   // draws it.
   function drawChart() {
     // Create the data table.
-    var data = google.visualization.arrayToDataTable(arrDiagramma);
+    var data = google.visualization.arrayToDataTable(arr);
 
     // Set chart options
     var options = {
       width: 1000,
       height: 400,
-      legend: { position: 'top', maxLines: 3 },
-      bar: { groupWidth: '75%' },
+      // legend: { position: 'top'},
+      // bar: { groupWidth: '75%' },
       isStacked: true,
     };
 
