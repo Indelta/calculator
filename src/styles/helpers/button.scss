@@ -1,18 +1,25 @@
 .btn {
     user-select: none;
-    font-size: 15px;
-    text-transform: capitalize;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
     letter-spacing: 0.9px;
     font-weight: 400;
-    border: 2px solid $btn-color;
+    border-radius: 2px;    
     background: $btn-color;
     transition: all 500ms ease;
     cursor: pointer;
     color: $primary-color;
-    margin-top: 30px;
-    padding: 8px 30px;
+    padding: 10px 25px;
+    outline: none;
+    border: none;
 
     &:hover {        
-        box-shadow: 3px -1px 33px -9px rgba(0,0,0,0.75);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 2px 2px rgba(0, 0, 0, 0.21);
+    }
+
+    &:active {
+        background: linear-gradient(0deg, #0DBAFF, #0DBAFF);
+        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.5);
     }
 }

@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     changeValueInput();
 
     document.querySelector('.main__button').addEventListener('click', () => {
-      document.querySelector('.table').replaceChild(document.createElement('tbody'), document.querySelector('.table').tBodies[0])
+      document.querySelector('.table').replaceChild(document.createElement('tbody'), document.querySelector('.table').tBodies[0]);
+      document.querySelector('.main__right').classList.add('active');
       calculatorCredit();
       paintDiagram();
     })

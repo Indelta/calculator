@@ -2,13 +2,11 @@ const calcPurchasePrice = () => {
   const purchasePrice = document.querySelector('.main__cost-thing');
   const downPayment = document.querySelector('.main__contribution');
   const creditAmount = document.querySelector('.main__sum-credit');
-  const union = document.querySelector('select[name=contribution-union]');
-  const rangeInput = document.querySelector('.main__range');
-  console.log(union.value)
-  
+  const union = document.querySelector('.contribution-union');
+  const rangeInput = document.querySelector('.main__range');  
   
   purchasePrice.addEventListener('input', () => {
-    if(union.value == 'руб.') {
+    if(union.checked == false) {
       creditAmount.value = +purchasePrice.value - downPayment.value;
       rangeInput.value = +purchasePrice.value - downPayment.value;
     } else {
@@ -18,7 +16,7 @@ const calcPurchasePrice = () => {
   })
 
   downPayment.addEventListener('input', () => {
-    if(union.value == 'руб.') {
+    if(union.checked == false) {
       creditAmount.value = +purchasePrice.value - downPayment.value;
       rangeInput.value = +purchasePrice.value - downPayment.value;
     } else {
@@ -28,7 +26,7 @@ const calcPurchasePrice = () => {
   })
 
   union.addEventListener('change', () => {
-    if(union.value == 'руб.') {
+    if(union.checked == false) {
       creditAmount.value = +purchasePrice.value - downPayment.value;
       rangeInput.value = +purchasePrice.value - downPayment.value;
     } else {

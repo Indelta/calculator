@@ -6,8 +6,27 @@
   box-sizing: border-box;
 }
 
+input, textarea {
+	outline: none;
+	&:focus:required:invalid { border-color: red }
+	&:required:valid { border-color: green }
+}
+
+body {
+	font-family: $roboto;
+  font-size: $fontsize;
+  font-weight: 400;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+  color: $textcolor;
+  
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
 .container {
-  max-width: 1140px;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -17,8 +36,7 @@
   }
 
   @include tablet-and-mobile {
-    max-width: 720px;
-    
+    max-width: 720px;    
   }
 
   @include mobile {

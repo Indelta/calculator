@@ -10,7 +10,7 @@ const activeManager = (elements, hidden) => {
       })
       el.classList.add('active');  
 
-      if(document.querySelector('.main__cost').classList.contains('active')){
+      if(document.querySelector('.header__cost').classList.contains('active')){
         document.querySelector(hidden).classList.add('show');
         document.querySelector('.main__sum-credit').disabled = true;
         document.querySelector('.main__range').disabled = true;

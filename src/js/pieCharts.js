@@ -1,5 +1,4 @@
 const pieCharts = (arr) => {
-  console.log(arr);
   google.charts.load("current", { packages: ["corechart"] });
   google.charts.setOnLoadCallback(drawChart);
   function drawChart() {

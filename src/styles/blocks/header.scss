@@ -1,3 +1,60 @@
-.header {
-  
+.header {  
+  &__sum,
+  &__cost {
+    user-select: none;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    font-weight: 400;
+    border-radius: 2px;    
+    background: linear-gradient(0deg, rgba(79, 79, 79, 0.26), rgba(79, 79, 79, 0.26));
+    transition: all .3s ease;
+    cursor: pointer;
+    color: #757474;
+    padding: 10px 25px;
+    outline: none;
+    border: none;
+
+    &:hover {        
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 2px 2px rgba(0, 0, 0, 0.21);
+    }
+    
+    &.active {
+      background: $btn-color;
+      color: $primary-color;
+    }
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__left {
+    max-width: 319px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    box-shadow: 0px 5.5px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);   
+  }
+
+  &__right {
+    flex-grow: 1;
+    background: #EBEBEB;
+    padding: 13px 24px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  &__subtitle {
+    color: #8F8F8F;
+  }
+
+  &__wrap-btn {
+    margin-top: 8px;
+  }
+
+  &__sum {
+    margin-right: 16px;
+  }
 }

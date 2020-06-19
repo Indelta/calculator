@@ -41,10 +41,9 @@ const calculatorCredit = () => {
   }
 
   function getPercentAnt() {
-    let montlyPayment = findMontlyPayment(1).toFixed(2);
+    let montlyPayment = findMontlyPayment(1);
     if (!currentSum) {
       currentPercent = percent / 12 / 100 * sum; 
-      console.log('currentPercent', currentPercent)
       currentDebt = montlyPayment - currentPercent;
       currentSum = sum - currentDebt;
     } else {
@@ -79,16 +78,16 @@ const calculatorCredit = () => {
         }  
         if (i === 3) {
           td.innerHTML = findMontlyPayment().toFixed(2);
-          sumMontlyPayment += +findMontlyPayment().toFixed(2);          
+          sumMontlyPayment += +findMontlyPayment();          
         }
         if (i === 4) {
           td.innerHTML = data.currentDebt.toFixed(2);
-          sumMainDebit += +data.currentDebt.toFixed(2);
+          sumMainDebit += +data.currentDebt;
           arrNew.push(+data.currentDebt.toFixed(2));
         }
         if (i === 5) {
           td.innerHTML = data.currentPercent.toFixed(2);
-          sumPercent += +data.currentPercent.toFixed(2);
+          sumPercent += +data.currentPercent;
           arrNew.push(+data.currentPercent.toFixed(2));
         }
         if (i === 6) {
@@ -97,7 +96,7 @@ const calculatorCredit = () => {
           arrNew.push(+dopPayment);
         }
         if (i === 7) {
-          td.innerHTML = data.currentSum.toFixed(1);
+          td.innerHTML = data.currentSum.toFixed(2);
           
         }
         
@@ -107,25 +106,31 @@ const calculatorCredit = () => {
   }
 
   function fillResultAnt() {
-    let totalPaymant = sumMontlyPayment + commision;
+    let unionComission = document.querySelector('.comission-union');
+    let totalPaymant;
+    if (unionComission.checked === false) {
+      totalPaymant = sumMontlyPayment + commision;
+    } else {
+      totalPaymant = sumMontlyPayment + sum * ( commision / 100 );
+    }
+    
     let totalOverPayment = totalPaymant - sum;
     let percOverPayment = totalOverPayment / sum * 100;
-    document.querySelector('#payment').innerHTML = findMontlyPayment().toFixed(2) + ' ' + 'руб.';
-    document.querySelector('#amount-payment').innerHTML = totalPaymant.toFixed(2) + ' ' + 'руб.'; 
-    document.querySelector('#overpayment').innerHTML = totalOverPayment.toFixed(2) + ' ' + 'руб.'; 
-    document.querySelector('#perc-overpayment').innerHTML = percOverPayment.toFixed(2) + ' ' + '%'; 
+    document.querySelector('#payment').innerHTML = findMontlyPayment().toFixed(2) + ' ' + '<span>руб.</span>';
+    document.querySelector('#amount-payment').innerHTML = totalPaymant.toFixed(2) + ' ' + '<span>руб.</span>'; 
+    document.querySelector('#overpayment').innerHTML = totalOverPayment.toFixed(2) + ' ' + '<span>руб.</span>'; 
+    document.querySelector('#perc-overpayment').innerHTML = percOverPayment.toFixed(2) + ' ' + '<span>%</span>'; 
     document.querySelector('#finish-payment').innerHTML = getDate().month[datePayment(n).getMonth()] + ' ' + datePayment(n).getFullYear(); 
     document.querySelector('.total_payment').innerHTML = sumMontlyPayment.toFixed(2);
     document.querySelector('.total_credit_pay').innerHTML = sumMainDebit.toFixed(0);
     document.querySelector('.total_percent_pay').innerHTML = sumPercent.toFixed(2);
-    document.querySelector('.total_services_pay').innerHTML = sumDopPayment.toFixed(2);
+    document.querySelector('.total_services_pay').innerHTML = sumDopPayment;
     arrPieCharts.push(['Сумма кредита', +sum])
     arrPieCharts.push(['Размер переплаты', +totalOverPayment.toFixed(2)])
   }
 
   // Дифференцированный расчет кредита
-
-
+  
   function getData() {
     let montlyPayment
     if (!currentSum) {
@@ -169,24 +174,25 @@ const calculatorCredit = () => {
         }  
         if (i === 3) {
           td.innerHTML = data.montlyPayment.toFixed(2);
-          sumMontlyPayment += +data.montlyPayment.toFixed(2);
+          sumMontlyPayment += +data.montlyPayment;
         }
         if (i === 4) {
           td.innerHTML = data.currentDebt.toFixed(2);
-          sumMainDebit += +data.currentDebt.toFixed(2);
+          sumMainDebit += +data.currentDebt;
           arrNew.push(+data.currentDebt.toFixed(2));
         }
         if (i === 5) {
           td.innerHTML = data.currentPercent.toFixed(2);
-          sumPercent += +data.currentPercent.toFixed(2);
+          sumPercent += +data.currentPercent;
           arrNew.push(+data.currentPercent.toFixed(2));
         }
         if (i === 6) {
           td.innerHTML = dopPayment;
+          sumDopPayment += +dopPayment;
           arrNew.push(+dopPayment);
         }
         if (i === 7) {
-          td.innerHTML = data.currentSum.toFixed(1);
+          td.innerHTML = data.currentSum.toFixed(2);
         }
       }
       arrDiagramma.push(arrNew);
@@ -194,19 +200,25 @@ const calculatorCredit = () => {
   }
 
   function fillResultDef() {
-    console.log(getData());
-    let totalPaymant = sumMontlyPayment + commision;
+    let unionComission = document.querySelector('.comission-union');
+    let totalPaymant;
+    if (unionComission.checked === false) {
+      totalPaymant = sumMontlyPayment + commision;
+    } else {
+      totalPaymant = sumMontlyPayment + sum * ( commision / 100 );
+    }
+ 
     let totalOverPayment = totalPaymant - sum;
     let percOverPayment = totalOverPayment / sum * 100;
-    document.querySelector('#payment').innerHTML = 'от' + ' ' + finishPayment.toFixed(2) + ' ' + 'руб.';
-    document.querySelector('#amount-payment').innerHTML = sumMontlyPayment.toFixed(2) + ' ' + 'руб.'; 
-    document.querySelector('#overpayment').innerHTML = totalOverPayment.toFixed(2) + ' ' + 'руб.'; 
-    document.querySelector('#perc-overpayment').innerHTML = percOverPayment.toFixed(2) + ' ' + '%'; 
+    document.querySelector('#payment').innerHTML = 'от' + ' ' + finishPayment.toFixed(2) + ' ' + '<span>руб.</span>';
+    document.querySelector('#amount-payment').innerHTML = totalPaymant.toFixed(2) + ' ' + '<span>руб.</span>'; 
+    document.querySelector('#overpayment').innerHTML = totalOverPayment.toFixed(2) + ' ' + '<span>руб.</span>'; 
+    document.querySelector('#perc-overpayment').innerHTML = percOverPayment.toFixed(2) + ' ' + '<span>%</span>'; 
     document.querySelector('#finish-payment').innerHTML = getDate().month[datePayment(n).getMonth()] + ' ' + datePayment(n).getFullYear(); 
     document.querySelector('.total_payment').innerHTML = sumMontlyPayment.toFixed(2);
     document.querySelector('.total_credit_pay').innerHTML = sumMainDebit.toFixed(0);
     document.querySelector('.total_percent_pay').innerHTML = sumPercent.toFixed(2);
-    document.querySelector('.total_services_pay').innerHTML = sumDopPayment.toFixed(2);
+    document.querySelector('.total_services_pay').innerHTML = sumDopPayment;
   }
 
   if(document.querySelector('.main__annyit').checked) {
@@ -218,7 +230,7 @@ const calculatorCredit = () => {
 
   }
 
-  console.log(arrDiagramma)
+  console.log(arrDiagramma);
   // pieCharts(arrPieCharts);
   paintDiagram(arrDiagramma);
 

@@ -8,23 +8,36 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__left">
+                    <img src="./assets/img/png/logo.png" alt="logo" class="header__logo">
+                </div>
+                <div class="header__right">
+                    <span class="header__subtitle">Способ расчета</span>
+                    <div class="header__wrap-btn">
+                        <button class="header__sum active" id="tab">по сумме кредита</button>
+                        <button class="header__cost" id="tab">по цене покупки</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <main class="main">
         <div class="container">
             <div class="main__inner">
-                <div class="main__left">
-                    <div class="main__left-header">
-                        <div class="main__row">
-                            <span class="main__title">Способ расчета</span>
-                            <div class="main__sum active" id="tab">по сумме кредита</div>
-                            <div class="main__cost" id="tab">по цене покупки</div>
-                        </div>
+                <div class="main__left"> 
+                    <div class="main__inform">
+                        <img src="./assets/img/png/path.png" alt="" class="main__logo">
+                        <span class="main__text">Сервис для внутреннего использования</span>
                     </div>
                     <div class="main__credit">
                         <div class="main__addition">
                             <div class="main__row">
                                 <span class="main__title">Стоимость покупки</span>
                                 <div class="main__wrapper">
-                                    <input type="text" class="main__cost-thing" value='2000'>                                    
+                                    <input type="text" class="main__cost-thing" value='1050'>                                    
                                     <span class="main__units">руб.</span>
                                 </div>
                             </div>
@@ -32,10 +45,11 @@
                                 <span class="main__title">Первоначальный взнос</span>
                                 <div class="main__wrapper">
                                     <input type="text" class="main__contribution" value='50'>
-                                    <select name='contribution-union'>
-                                        <option>%</option>
-                                        <option>руб.</option>
-                                    </select>
+                                    <div class="button-switch">
+                                        <input type="checkbox" id="switch-orange" class="switch contribution-union" />
+                                        <label for="switch-orange" class="lbl-off">руб.</label>
+                                        <label for="switch-orange" class="lbl-on">%</label>
+                                      </div>
                                 </div>
                             </div>
                         </div>
@@ -65,11 +79,13 @@
                         <div class="main__row">
                             <span class="main__title">Тип выплат</span>
                             <div class="main__wrapper-radio">
-                                <label>аннуитетный
+                                <label class="main__label-ant">
                                     <input type="radio" class="main__annyit" name='credit' checked>
+                                    аннуитетный
                                 </label>
-                                <label>дифференцированный
+                                <label class="main__label-dif">
                                     <input type="radio" class="main__differ" name='credit'>
+                                    дифференцированный
                                 </label>
                             </div>
                         </div>
@@ -77,11 +93,11 @@
                             <span class="main__title">Единовременная комиссия</span>
                             <div class="main__wrapper">
                                 <input type="text" class="main__commision">
-                                <span class="main__units">руб.</span>
-                                <!-- <select>
-                                    <option>%</option>
-                                    <option>руб.</option>
-                                </select> -->
+                                <div class="button-switch">
+                                    <input type="checkbox" id="switch-blue" class="switch comission-union" />
+                                    <label for="switch-blue" class="lbl-off">руб.</label>
+                                    <label for="switch-blue" class="lbl-on">%</label>
+                                  </div>
                             </div>
                         </div>
                         <div class="main__row">
@@ -100,10 +116,17 @@
                                 </select>
                             </div>
                         </div>
-                        <input type="button" class="main__button" value="РАССЧИТАТЬ">
+                        <div class="main__row">
+                            <div class="main__bottom"></div>
+                            <div class="main__bottom-btn">
+                                <input type="button" class="main__button btn" value="РАССЧИТАТЬ">
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="main__right result">
+                    <span class="result__subtitle">Итоги расчета</span>
                     <div class="result__row">
                         <span class="result__title">Ежемесячный платеж:</span>
                         <span class="result__value" id="payment"></span>
@@ -114,18 +137,20 @@
                     </div>
                     <div class="result__row">
                         <span class="result__title">Переплата по кредиту:</span>
-                        <span class="result__value" id="overpayment"></span>
+                        <span class="result__value result__value--light" id="overpayment"></span>
                     </div>
                     <div class="result__row">
                         <span class="result__title">Процент переплаты:</span>
-                        <span class="result__value" id="perc-overpayment"></span>
+                        <span class="result__value result__value--light" id="perc-overpayment"></span>
                     </div>
                     <div class="result__row">
                         <span class="result__title">Окончание выплат:</span>
-                        <span class="result__value" id="finish-payment"></span>
+                        <span class="result__value result__value--light" id="finish-payment"></span>
                     </div>
-                </div>
-                <div id="piechart"></div>
+                </div>                
+            </div>
+            <div id="piechart"></div>
+                <span class="table-title">График платежей по кредиту</span>
                 <table class="table">
                     <thead>
                         <tr>
@@ -141,7 +166,8 @@
                     <tbody></tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="2"></td>
+                            <td ></td>
+                            <td ></td>
                             <td class="total_payment"></td>
                             <td class="total_credit_pay"></td>
                             <td class="total_percent_pay"></td>
@@ -150,10 +176,11 @@
                         </tr>
                     </tfoot>
                 </table>
-            </div>
         </div>
+        <span class="diagram__title">Структура ежемесячных платежей</span>
         <div id="chart_div"></div>
     </main>
+    <iframe width="100%" height="500" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcooAQoFnErSBMZOs7i3hMiI6zIKxPEZIIuPpbUeUAGo6_AAeYtWSi6ja8cWWGRl0fyd2XL3uMA4qm/pubchart?oid=1354676735&format=interactive"></iframe>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 
