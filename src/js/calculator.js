@@ -16,7 +16,7 @@ const calculatorCredit = () => {
   let sumMainDebit = 0;
   let sumPercent = 0;
   let sumDopPayment = 0;
-  let arrDiagramma = [['Дата', 'Основной долг', 'Проценты по кредиту', 'Дополнительные платежи']];
+  let arrDiagramma = [['Дата', 'Основной долг', { role: 'style' }, 'Проценты по кредиту', 'Дополнительные платежи']];
   let arrPieCharts = [['Сумма кредита', 'Размер переплаты']];
 
 
@@ -84,6 +84,7 @@ const calculatorCredit = () => {
           td.innerHTML = data.currentDebt.toFixed(2);
           sumMainDebit += +data.currentDebt;
           arrNew.push(+data.currentDebt.toFixed(2));
+          arrNew.push('color: #0196D1');
         }
         if (i === 5) {
           td.innerHTML = data.currentPercent.toFixed(2);
@@ -100,7 +101,7 @@ const calculatorCredit = () => {
           
         }
         
-      }
+      }      
       arrDiagramma.push(arrNew);
     }
   }
