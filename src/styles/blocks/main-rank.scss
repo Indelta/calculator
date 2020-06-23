@@ -1,0 +1,28 @@
+.main-rank {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.rank {
+  &__inner {
+    display: flex;
+
+  }
+
+  &__left {
+    max-width: 319px;
+    width: 100%;
+    background-color: #4B4B4B;
+  }
+
+  &__right {
+    padding: 10px;
+    iframe {
+      width: 800px;
+      height: 400px;
+    }
+  }
+}

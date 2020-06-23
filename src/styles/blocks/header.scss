@@ -40,6 +40,8 @@
   }
 
   &__right {
+    display: flex;
+    justify-content: space-between;
     flex-grow: 1;
     background: #EBEBEB;
     padding: 13px 24px;
@@ -56,5 +58,21 @@
 
   &__sum {
     margin-right: 16px;
+  }
+
+  &__rank {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__img {
+    margin-top: 10px;
+    @include transition;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .8;
+    }
   }
 }

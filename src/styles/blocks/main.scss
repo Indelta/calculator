@@ -1,4 +1,8 @@
 .main {
+  &.active {
+    display: none;
+  }
+  
   &__inner {
     display: flex;    
   }

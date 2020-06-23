@@ -99,13 +99,13 @@ $transition-default: 0.25s ease-out 0.10s;
 
     &#switch-orange {
       &:checked:before {
-        background: $color-carrot;
+        background: #0196D1;
       }
     }
 
     &#switch-blue {
       &:checked:before {
-        background: $color-peter-river;
+        background: #0196D1;
       }
     }
   }

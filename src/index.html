@@ -1,186 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>calculator</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <div class="header__left">
-                    <img src="./assets/img/png/logo.png" alt="logo" class="header__logo">
-                </div>
-                <div class="header__right">
-                    <span class="header__subtitle">Способ расчета</span>
-                    <div class="header__wrap-btn">
-                        <button class="header__sum active" id="tab">по сумме кредита</button>
-                        <button class="header__cost" id="tab">по цене покупки</button>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__left">
+            <img
+              src="./assets/img/png/logo.png"
+              alt="logo"
+              class="header__logo"
+            />
+          </div>
+          <div class="header__right">
+            <div class="header__calculation">
+              <span class="header__subtitle">Способ расчета</span>
+              <div class="header__wrap-btn">
+                <button class="header__sum active" id="tab">
+                  по сумме кредита
+                </button>
+                <button class="header__cost" id="tab">по цене покупки</button>
+              </div>
             </div>
+            <div class="header__rank">
+              <span class="header__subtitle">Рейтинг сотрудников</span>
+              <img
+                src="./assets/img/jpg/icon_noactive.jpg"
+                alt=""
+                class="header__img"
+              />
+            </div>
+          </div>
         </div>
+      </div>
     </header>
     <main class="main">
-        <div class="container">
-            <div class="main__inner">
-                <div class="main__left"> 
-                    <div class="main__inform">
-                        <img src="./assets/img/png/path.png" alt="" class="main__logo">
-                        <span class="main__text">Сервис для внутреннего использования</span>
-                    </div>
-                    <div class="main__credit">
-                        <div class="main__addition">
-                            <div class="main__row">
-                                <span class="main__title">Стоимость покупки</span>
-                                <div class="main__wrapper">
-                                    <input type="text" class="main__cost-thing" value='1050'>                                    
-                                    <span class="main__units">руб.</span>
-                                </div>
-                            </div>
-                            <div class="main__row">
-                                <span class="main__title">Первоначальный взнос</span>
-                                <div class="main__wrapper">
-                                    <input type="text" class="main__contribution" value='50'>
-                                    <div class="button-switch">
-                                        <input type="checkbox" id="switch-orange" class="switch contribution-union" />
-                                        <label for="switch-orange" class="lbl-off">руб.</label>
-                                        <label for="switch-orange" class="lbl-on">%</label>
-                                      </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="main__row">
-                            <span class="main__title">Сумма кредита</span>
-                            <div class="main__wrapper">
-                                <input type="text" class="main__sum-credit" value="1000">
-                                <input type="range" min="100" max="50000" value="1000" class="main__range">
-                                <span class="main__units">руб.</span>
-                            </div>
-                        </div>
-                        <div class="main__row">
-                            <span class="main__title">Срок кредита</span>
-                            <div class="main__wrapper">
-                                <input type="text" class="main__term-credit" value='12'>
-                                <input type="range" min="1" max="100" value="12" class="main__range-percent">
-                                <span class="main__units">мес.</span>
-                            </div>
-                        </div>
-                        <div class="main__row">
-                            <span class="main__title">Процентная ставка</span>
-                            <div class="main__wrapper">
-                                <input type="text" class="main__percent" value='10'>
-                                <span class="main__units">%</span>
-                            </div>
-                        </div>
-                        <div class="main__row">
-                            <span class="main__title">Тип выплат</span>
-                            <div class="main__wrapper-radio">
-                                <label class="main__label-ant">
-                                    <input type="radio" class="main__annyit" name='credit' checked>
-                                    аннуитетный
-                                </label>
-                                <label class="main__label-dif">
-                                    <input type="radio" class="main__differ" name='credit'>
-                                    дифференцированный
-                                </label>
-                            </div>
-                        </div>
-                        <div class="main__row">
-                            <span class="main__title">Единовременная комиссия</span>
-                            <div class="main__wrapper">
-                                <input type="text" class="main__commision">
-                                <div class="button-switch">
-                                    <input type="checkbox" id="switch-blue" class="switch comission-union" />
-                                    <label for="switch-blue" class="lbl-off">руб.</label>
-                                    <label for="switch-blue" class="lbl-on">%</label>
-                                  </div>
-                            </div>
-                        </div>
-                        <div class="main__row">
-                            <span class="main__title">Доп. ежемесячные платежи (пакет услуг)</span>
-                            <div class="main__wrapper">
-                                <input type="text" class="main__dop-payment">
-                                <span class="main__units">руб.</span>
-                            </div>
-                        </div>
-                        <div class="main__row">
-                            <span class="main__title">Начало выплат</span>
-                            <div class="main__select">
-                                <select class="main__month" name='input-month'>
-                                </select>
-                                <select class="main__year" name='input-year'>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="main__row">
-                            <div class="main__bottom"></div>
-                            <div class="main__bottom-btn">
-                                <input type="button" class="main__button btn" value="РАССЧИТАТЬ">
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="main__right result">
-                    <span class="result__subtitle">Итоги расчета</span>
-                    <div class="result__row">
-                        <span class="result__title">Ежемесячный платеж:</span>
-                        <span class="result__value" id="payment"></span>
-                    </div>
-                    <div class="result__row">
-                        <span class="result__title">Общая сумма выплат:</span>
-                        <span class="result__value" id="amount-payment"></span>
-                    </div>
-                    <div class="result__row">
-                        <span class="result__title">Переплата по кредиту:</span>
-                        <span class="result__value result__value--light" id="overpayment"></span>
-                    </div>
-                    <div class="result__row">
-                        <span class="result__title">Процент переплаты:</span>
-                        <span class="result__value result__value--light" id="perc-overpayment"></span>
-                    </div>
-                    <div class="result__row">
-                        <span class="result__title">Окончание выплат:</span>
-                        <span class="result__value result__value--light" id="finish-payment"></span>
-                    </div>
-                </div>                
+      <div class="container">
+        <div class="main__inner">
+          <div class="main__left">
+            <div class="main__inform">
+              <img src="./assets/img/png/path.png" alt="" class="main__logo" />
+              <span class="main__text"
+                >Сервис для внутреннего использования</span
+              >
             </div>
-            <div id="piechart"></div>
-                <span class="table-title">График платежей по кредиту</span>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>№ <br> платежа</th>
-                            <th>Дата <br> платежа</th>
-                            <th>Сумма <br> платежа</th>
-                            <th>в т.ч. <br> осн. долг</th>
-                            <th>в т.ч. <br> проценты</th>
-                            <th>в т.ч. <br> доп. платежи</th>
-                            <th>Остаток <br> осн. долга</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                    <tfoot>
-                        <tr>
-                            <td ></td>
-                            <td ></td>
-                            <td class="total_payment"></td>
-                            <td class="total_credit_pay"></td>
-                            <td class="total_percent_pay"></td>
-                            <td class="total_services_pay"></td>
-                            <td></td>
-                        </tr>
-                    </tfoot>
-                </table>
+            <div class="main__credit">
+              <div class="main__addition">
+                <div class="main__row">
+                  <span class="main__title">Стоимость покупки</span>
+                  <div class="main__wrapper">
+                    <input type="text" class="main__cost-thing" value="1050" />
+                    <span class="main__units">руб.</span>
+                  </div>
+                </div>
+                <div class="main__row">
+                  <span class="main__title">Первоначальный взнос</span>
+                  <div class="main__wrapper">
+                    <input type="text" class="main__contribution" value="50" />
+                    <div class="button-switch">
+                      <input
+                        type="checkbox"
+                        id="switch-orange"
+                        class="switch contribution-union"
+                      />
+                      <label for="switch-orange" class="lbl-off">руб.</label>
+                      <label for="switch-orange" class="lbl-on">%</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="main__row">
+                <span class="main__title">Сумма кредита</span>
+                <div class="main__wrapper">
+                  <input type="text" class="main__sum-credit" value="1000" />
+                  <input
+                    type="range"
+                    min="100"
+                    max="50000"
+                    value="1000"
+                    class="main__range"
+                  />
+                  <span class="main__units">руб.</span>
+                </div>
+              </div>
+              <div class="main__row">
+                <span class="main__title">Срок кредита</span>
+                <div class="main__wrapper">
+                  <input type="text" class="main__term-credit" value="12" />
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="12"
+                    class="main__range-percent"
+                  />
+                  <span class="main__units">мес.</span>
+                </div>
+              </div>
+              <div class="main__row">
+                <span class="main__title">Процентная ставка</span>
+                <div class="main__wrapper">
+                  <input type="text" class="main__percent" value="10" />
+                  <span class="main__units">%</span>
+                </div>
+              </div>
+              <div class="main__row">
+                <span class="main__title">Тип выплат</span>
+                <div class="main__wrapper-radio">
+                  <label class="main__label-ant">
+                    <input
+                      type="radio"
+                      class="main__annyit"
+                      name="credit"
+                      checked
+                    />
+                    аннуитетный
+                  </label>
+                  <label class="main__label-dif">
+                    <input type="radio" class="main__differ" name="credit" />
+                    дифференцированный
+                  </label>
+                </div>
+              </div>
+              <div class="main__row">
+                <span class="main__title">Единовременная комиссия</span>
+                <div class="main__wrapper">
+                  <input type="text" class="main__commision" />
+                  <div class="button-switch">
+                    <input
+                      type="checkbox"
+                      id="switch-blue"
+                      class="switch comission-union"
+                    />
+                    <label for="switch-blue" class="lbl-off">руб.</label>
+                    <label for="switch-blue" class="lbl-on">%</label>
+                  </div>
+                </div>
+              </div>
+              <div class="main__row">
+                <span class="main__title"
+                  >Доп. ежемесячные платежи (пакет услуг)</span
+                >
+                <div class="main__wrapper">
+                  <input type="text" class="main__dop-payment" />
+                  <span class="main__units">руб.</span>
+                </div>
+              </div>
+              <div class="main__row">
+                <span class="main__title">Начало выплат</span>
+                <div class="main__select">
+                  <select class="main__month" name="input-month"> </select>
+                  <select class="main__year" name="input-year"> </select>
+                </div>
+              </div>
+              <div class="main__row">
+                <div class="main__bottom"></div>
+                <div class="main__bottom-btn">
+                  <input
+                    type="button"
+                    class="main__button btn"
+                    value="РАССЧИТАТЬ"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main__right result">
+            <span class="result__subtitle">Итоги расчета</span>
+            <div class="result__row">
+              <span class="result__title">Ежемесячный платеж:</span>
+              <span class="result__value" id="payment"></span>
+            </div>
+            <div class="result__row">
+              <span class="result__title">Общая сумма выплат:</span>
+              <span class="result__value" id="amount-payment"></span>
+            </div>
+            <div class="result__row">
+              <span class="result__title">Переплата по кредиту:</span>
+              <span
+                class="result__value result__value--light"
+                id="overpayment"
+              ></span>
+            </div>
+            <div class="result__row">
+              <span class="result__title">Процент переплаты:</span>
+              <span
+                class="result__value result__value--light"
+                id="perc-overpayment"
+              ></span>
+            </div>
+            <div class="result__row">
+              <span class="result__title">Окончание выплат:</span>
+              <span
+                class="result__value result__value--light"
+                id="finish-payment"
+              ></span>
+            </div>
+          </div>
         </div>
-        <span class="diagram-title">Структура ежемесячных платежей</span>
-        <div id="chart_div"></div>
+        <div id="piechart"></div>
+        <span class="table-title">График платежей по кредиту</span>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>
+                № <br />
+                платежа
+              </th>
+              <th>
+                Дата <br />
+                платежа
+              </th>
+              <th>
+                Сумма <br />
+                платежа
+              </th>
+              <th>
+                в т.ч. <br />
+                осн. долг
+              </th>
+              <th>
+                в т.ч. <br />
+                проценты
+              </th>
+              <th>
+                в т.ч. <br />
+                доп. платежи
+              </th>
+              <th>
+                Остаток <br />
+                осн. долга
+              </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="total_payment"></td>
+              <td class="total_credit_pay"></td>
+              <td class="total_percent_pay"></td>
+              <td class="total_services_pay"></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <span class="diagram-title">Структура ежемесячных платежей</span>
+      <div id="chart_div"></div>
     </main>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-</body>
+    <main class="main-rank rank">
+      <div class="container">
+          <div class="main__inform">
+            <img src="./assets/img/png/path.png" alt="" class="main__logo" />
+            <span class="main__text">Сервис для внутреннего использования</span>
+          </div>
+        <div class="rank__inner">
+            <div class="rank__left">
 
+            </div>
+            <div class="rank__right">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcooAQoFnErSBMZOs7i3hMiI6zIKxPEZIIuPpbUeUAGo6_AAeYtWSi6ja8cWWGRl0fyd2XL3uMA4qm/pubchart?oid=277052940&format=interactive"></iframe>
+            </div>
+
+        </div>
+      </div>
+    </main>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </body>
 </html>
