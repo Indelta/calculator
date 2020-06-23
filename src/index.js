@@ -19,13 +19,17 @@ document.addEventListener('DOMContentLoaded', function() {
     activeManager('#tab', '.main__addition');
     fillSection();
     changeValueInput();
-    tabRank();
+
 
     document.querySelector('.main__button').addEventListener('click', () => {
       document.querySelector('.table').replaceChild(document.createElement('tbody'), document.querySelector('.table').tBodies[0]);
       document.querySelector('.main__right').classList.add('active');
       calculatorCredit();
       paintDiagram();
+    })
+
+    document.querySelector('.header__img').addEventListener( 'click', () => {
+      tabRank();
     })
 
     var mySwiper = new Swiper('.swiper-container', { 

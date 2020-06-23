@@ -5,6 +5,7 @@ const activeManager = (elements, hidden) => {
 
   tabs.forEach((el) => {
     el.addEventListener( 'click', () => {
+      removeActiveRank ()
       tabs.forEach((element) => {
         element.classList.remove('active');              
       })
@@ -24,4 +25,15 @@ const activeManager = (elements, hidden) => {
   }) 
 }
 
+function removeActiveRank () {
+  const mainRank = document.querySelector('.main-rank');
+  const main = document.querySelector('.main');
+  const img = document.querySelector('.header__img');
+
+  mainRank.classList.remove('active');
+  main.classList.remove('active');
+  img.classList.remove('active');
+}
+
 export default activeManager;
+
