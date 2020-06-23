@@ -23,6 +23,10 @@ const activeManager = (elements, hidden) => {
       }    
     })
   }) 
+
+  document.querySelector('.header__logo').addEventListener('click', () => {
+    removeActiveRank ()
+  })
 }
 
 function removeActiveRank () {

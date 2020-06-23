@@ -30,6 +30,10 @@
     display: flex;
   }
 
+  &__logo {
+    cursor: pointer;
+  }
+
   &__left {
     max-width: 319px;
     width: 100%;
