@@ -70,6 +70,14 @@
     margin-top: 10px;
     @include transition;
     cursor: pointer;
+    width: 34px;
+    height: 34px;
+    background-image: url('../assets/img/jpg/icon_noactive.jpg');
+
+    &.active {
+      background-image: url('../assets/img/jpg/icon_active.jpg');
+    }
+
 
     &:hover {
       opacity: .8;
