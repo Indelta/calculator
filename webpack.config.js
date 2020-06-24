@@ -90,7 +90,8 @@ module.exports = {
             template: './index.html',
             minify: {
                collapseWhitespace: isProd 
-            }
+            },
+            favicon: './favicon.ico',
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
